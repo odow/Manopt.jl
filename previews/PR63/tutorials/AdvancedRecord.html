@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Write a RecordAction · Manopt.jl</title><link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Mono" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.11.1/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><a class="docs-logo" href="../index.html"><img src="../assets/logo.png" alt="Manopt.jl logo"/></a><div class="docs-package-name"><span class="docs-autofit">Manopt.jl</span></div><form class="docs-search" action="../search.html"><input class="docs-search-query" id="documenter-search-query" name="q" type="text" placeholder="Search docs"/></form><ul class="docs-menu"><li><a class="tocitem" href="../index.html">Home</a></li><li><a class="tocitem" href="../about.html">About</a></li><li><span class="tocitem">How to...</span><ul><li><a class="tocitem" href="MeanAndMedian.html">get Started: Optimize!</a></li><li><a class="tocitem" href="Benchmark.html">speed up! using <code>gradF!</code></a></li><li><a class="tocitem" href="StochasticGradientDescent.html">do stochastic gradient descent</a></li><li><a class="tocitem" href="BezierCurves.html">work with Bézier curves</a></li><li><a class="tocitem" href="GradientOfSecondOrderDifference.html">see the gradient of <span>$d_2$</span></a></li><li><a class="tocitem" href="JacobiFields.html">use Jacobi Fields</a></li><li class="is-active"><a class="tocitem" href="AdvancedRecord.html">Write a <code>RecordAction</code></a></li></ul></li><li><a class="tocitem" href="../plans/index.html">Plans</a></li><li><span class="tocitem">Solvers</span><ul><li><a class="tocitem" href="../solvers/index.html">Introduction</a></li><li><a class="tocitem" href="../solvers/ChambollePock.html">Chambolle-Pock</a></li><li><a class="tocitem" href="../solvers/conjugate_gradient_descent.html">Conjugate gradient descent</a></li><li><a class="tocitem" href="../solvers/cyclic_proximal_point.html">Cyclic Proximal Point</a></li><li><a class="tocitem" href="../solvers/DouglasRachford.html">Douglas–Rachford</a></li><li><a class="tocitem" href="../solvers/gradient_descent.html">Gradient Descent</a></li><li><a class="tocitem" href="../solvers/NelderMead.html">Nelder–Mead</a></li><li><a class="tocitem" href="../solvers/particle_swarm.html">Particle Swarm Optimization</a></li><li><a class="tocitem" href="../solvers/quasi_Newton.html">Quasi-Newton</a></li><li><a class="tocitem" href="../solvers/stochastic_gradient_descent.html">Stochastic Gradient Descent</a></li><li><a class="tocitem" href="../solvers/subgradient.html">Subgradient method</a></li><li><a class="tocitem" href="../solvers/truncated_conjugate_gradient_descent.html">Steihaug-Toint TCG Method</a></li><li><a class="tocitem" href="../solvers/trust_regions.html">Trust-Regions Solver</a></li></ul></li><li><span class="tocitem">Functions</span><ul><li><a class="tocitem" href="../functions/index.html">Introduction</a></li><li><a class="tocitem" href="../functions/bezier.html">Bézier curves</a></li><li><a class="tocitem" href="../functions/costs.html">Cost functions</a></li><li><a class="tocitem" href="../functions/differentials.html">Differentials</a></li><li><a class="tocitem" href="../functions/adjointdifferentials.html">Adjoint Differentials</a></li><li><a class="tocitem" href="../functions/gradients.html">Gradients</a></li><li><a class="tocitem" href="../functions/Jacobi_fields.html">Jacobi Fields</a></li><li><a class="tocitem" href="../functions/proximal_maps.html">Proximal Maps</a></li><li><a class="tocitem" href="../functions/manifold.html">Specific Manifold Functions</a></li></ul></li><li><span class="tocitem">Helpers</span><ul><li><a class="tocitem" href="../helpers/data.html">Data</a></li><li><a class="tocitem" href="../helpers/errorMeasures.html">Error Measures</a></li><li><a class="tocitem" href="../helpers/exports.html">Exports</a></li></ul></li><li><a class="tocitem" href="../notation.html">Notation</a></li><li><a class="tocitem" href="../list.html">Function Index</a></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><nav class="breadcrumb"><ul class="is-hidden-mobile"><li><a class="is-disabled">How to...</a></li><li class="is-active"><a href="AdvancedRecord.html">Write a <code>RecordAction</code></a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href="AdvancedRecord.html">Write a <code>RecordAction</code></a></li></ul></nav><div class="docs-right"><a class="docs-edit-link" href="https://github.com/JuliaManifolds/Manopt.jl/blob/master/src/tutorials/AdvancedRecord.jl" title="Edit on GitHub"><span class="docs-icon fab"></span><span class="docs-label is-hidden-touch">Edit on GitHub</span></a><a class="docs-settings-button fas fa-cog" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-sidebar-button fa fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a></div></header><article class="content" id="documenter-page"><h1 id="RecordingTutorial-1"><a class="docs-heading-anchor" href="#RecordingTutorial-1">Advanced Recording Example</a><a class="docs-heading-anchor-permalink" href="#RecordingTutorial-1" title="Permalink"></a></h1><p>The recording and debug possiblities make it possible to record nearly any data during the iterations. For fields of the <a href="../plans/index.html#Manopt.Options"><code>Options</code></a> this can be directly done using the <a href="../plans/index.html#Manopt.RecordEntry"><code>RecordEntry</code></a>. For others, an own <a href="../plans/index.html#Manopt.RecordAction"><code>RecordAction</code></a> has to be defined. This small tutorial illustrates, how to track cost function evaluations.</p><p>We first define the cost function itself as a functor, that counts its own evaluations. We stick to the example from the introductionary <a href="MeanAndMedian.html#Optimize-1">Get Started: Optimize!</a> and compute the Riemannian center of mass.</p><pre><code class="language-julia">using Manopt, Manifolds, Random
+
+mutable struct MyCost{T}
+    data::T
+    count::Int
+end
+MyCost(data::T) where {T} = MyCost{T}(data, 0)
+function (c::MyCost)(M, x)
+    c.count += 1
+    return sum(1 / (2 * length(c.data)) * distance.(Ref(M), Ref(x), c.data) .^ 2)
+end</code></pre><p>and we define the following RecordAction,</p><pre><code class="language-julia">mutable struct RecordCount &lt;: RecordAction
+    recorded_values::Vector{Int}
+    RecordCount() = new(Vector{Int}())
+end
+function (r::RecordCount)(p::Problem, ::Options, i)
+    if i &gt; 0
+        push!(r.recorded_values, p.cost.count)
+    elseif i &lt; 0 &amp;&amp; i &gt; typemin(Int) # reset if negative but smallest int (stop)
+        r.recorded_values = Vector{Int}()
+    end
+end</code></pre><p>The remainder we just set up as before.</p><pre><code class="language-julia">Random.seed!(42)
+m = 30
+M = Sphere(m)
+n = 800
+σ = π / 8
+x = zeros(Float64, m + 1)
+x[2] = 1.0
+data = [exp(M, x, random_tangent(M, x, Val(:Gaussian), σ)) for i in 1:n];
+gradF(M, x) = sum(1 / n * grad_distance.(Ref(M), data, Ref(x)))</code></pre><p>and now we can initialize the new cost and call the gradient descent. Note that in order to access the record we have to change the return value of the gradient descent</p><pre><code class="language-julia">F = MyCost(data)
+R = gradient_descent(
+    M, F, gradF, data[1]; record=[:Iteration, RecordCount(), :Cost], return_options=true
+)
+get_record(R)</code></pre><pre><code class="language-none">20-element Array{Tuple{Int64,Int64,Float64},1}:
+ (1, 1, 0.5467764136711742)
+ (2, 2, 0.536496662070443)
+ (3, 3, 0.5349809370338188)
+ (4, 4, 0.5347588107780821)
+ (5, 5, 0.5347262771824008)
+ (6, 6, 0.5347215112273678)
+ (7, 7, 0.5347208128443974)
+ (8, 8, 0.5347207104761789)
+ (9, 9, 0.5347206954668047)
+ (10, 10, 0.5347206932654798)
+ (11, 11, 0.5347206929425345)
+ (12, 12, 0.534720692895144)
+ (13, 13, 0.5347206928881875)
+ (14, 14, 0.5347206928871665)
+ (15, 15, 0.5347206928870166)
+ (16, 16, 0.5347206928869943)
+ (17, 17, 0.5347206928869911)
+ (18, 18, 0.5347206928869905)
+ (19, 19, 0.5347206928869904)
+ (20, 20, 0.5347206928869904)</code></pre></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="JacobiFields.html">« use Jacobi Fields</a><a class="docs-footer-nextpage" href="../plans/index.html">Plans »</a></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Friday 19 March 2021 10:58">Friday 19 March 2021</span>. Using Julia version 1.4.2.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
